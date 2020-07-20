@@ -1,9 +1,12 @@
 # Blockchain-Review-Engine
+This is an application where a product is reviewed  using *Blockchain technology* , which ensures the quality of the product and generates the trust among users by eliminiating the possibility of any biasedness towards a particular product.
 ***
 #### Restrictions:
   - Only the owner can add products
   - A user can only rate a product once
 *** 
+### Enviornment Set Up
+
 #### Set up MetaMask
 Download it from https://metamask.io/ and make its extention to browser  (reference https://medium.com/@followcoin/how-to-install-metamask-88cbdabc1d28)
 ***
@@ -17,6 +20,7 @@ check version by following commands:
 - npm -v
 - git --version
 ***
+Make a new folder and install following packages :
 #### Ethereum side Packages
 ``` sh
 $ npm install fs fs-extra
@@ -36,6 +40,25 @@ $ npm install semantic-ui-react
 $ npm install semantic-ui-css
 ```
 ***
+After installing packages : <br/>Open package.json <br/> In script tag, add 'test' : 'mocha' and 'dev' : 'node server.js'<br/>
+#### File Details
+- .next <br/>
+Next.js *A React framework* is used to ensure an intuitive page-based routing system (with support for dynamic routes). <br/> <br/>
+- ethereum : It contains ethereum related files <br/>
+contracts : It contains the smart contract built in solidity. <br/>
+compile.js : It is used to compile the contract using solc.<br/>
+deploy.js : It deploys a contract.<br/>
+instance.js : It is used to create a instance of contract so that an interaction is done using frontend.<br/>
+web3.js : It is used to generate the web3 instance and to set a provider.<br/> <br/>
+- pages : It contains the frontend files<br/>
+index.js : It defines the Home Page <br/>
+show.js : It defnes the Products Page <br/>
+voter-details.js : It defines the Voters Details Page. <br/> <br/>
+- test (ratingTest.js) : It is used to write test cases realated to contract. <br/> <br/>
+- routes.js : It is used to set routes of the pages.<br/> <br/>
+- server.js : It is used to set the server. <br/> <br/>
+- package,json : It contains all the dependencies related to project. <br/> <br/>
+
 To run test :
 ```sh
 $ npm run test
