@@ -20,6 +20,7 @@ check version by following commands:
 - npm -v
 - git --version
 ***
+### Package Updates
 Make a new folder and install following packages :
 #### Ethereum side Packages
 ``` sh
@@ -41,6 +42,8 @@ $ npm install semantic-ui-css
 ```
 ***
 After installing packages : <br/>Open package.json <br/> In script tag, add 'test' : 'mocha' and 'dev' : 'node server.js'<br/>
+***
+### File Updates
 #### File Details
 - .next <br/>
 Next.js *A React framework* is used to ensure an intuitive page-based routing system (with support for dynamic routes). <br/> <br/>
@@ -58,7 +61,8 @@ voter-details.js : It defines the Voters Details Page. <br/> <br/>
 - routes.js : It is used to set routes of the pages.<br/> <br/>
 - server.js : It is used to set the server. <br/> <br/>
 - package,json : It contains all the dependencies related to project. <br/> <br/>
-
+***
+### How to Test the environment?
 To run test :
 ```sh
 $ npm run test
@@ -66,10 +70,12 @@ $ npm run test
 #### Preview
 ![image](https://user-images.githubusercontent.com/45670997/87297355-e8e4ec00-c525-11ea-909f-84bfc9ec671c.png)
 ***
+### How to Compile the contarct?
 To compile, Go to Ethereum directory and use command :
 ```sh
 $ node compile.js
 ```
+### How to Deploy the contract?
 To deploy , Go to Ethereum directory and use command :
 ```sh
 $ node deploy.js
@@ -78,6 +84,7 @@ $ node deploy.js
 ![image](https://user-images.githubusercontent.com/45670997/87298242-7d9c1980-c527-11ea-9e88-4238001597f6.png)
 Copy interface and contract address and put in instance.js
 ***
+### How to start the Application?
 To run server
 ```sh
 $ npm run dev
@@ -85,6 +92,7 @@ $ npm run dev
 #### Preview
 ![image](https://user-images.githubusercontent.com/45670997/87298711-41b58400-c528-11ea-8b69-c93edcbcb233.png)
 ***
+### How to use the Application?
 At the start
 ### Home page
 ![image](https://user-images.githubusercontent.com/45670997/87299133-12ebdd80-c529-11ea-8577-742553f79184.png)
