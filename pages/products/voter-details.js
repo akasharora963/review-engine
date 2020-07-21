@@ -57,15 +57,15 @@ class VoterDetails extends Component{
             </Link>
             <h3> Voters Info : </h3>
             <ul className="list-group">
-              {this.state.products.length ? null : <h2>No info available</h2>} //condition when there is no product
+              {this.state.products.length ? null : <h2>No info available</h2>}
               {this.state.products.map(p =>
                   <div>
-                    {p.pvoters.length ?  //condition when there is no voters
+                    {p.pvoters.length ?
                     <li className="list-group-item" key={p.id}>
-                      <Header size='medium'>Product  : {p.title}</Header> //product name
+                      <Header size='medium'>Product  : {p.title}</Header>
                       <Segment inverted compact='true'>
-                        {p.pvoters.map(arr=>( //mapping is done to read elements of voters array
-                          <p>{arr}</p> //Voter details
+                        {p.pvoters.map(arr=>(
+                          <p>{arr}</p>
                         ))}
                       </Segment>
                       <Divider section/>

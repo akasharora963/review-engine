@@ -36,30 +36,27 @@ class ProductIndex extends Component{
    this.setState({loading : false});
 
  }
-
+ //For frontend
   render() {
-    //if MetaMask is not there a msg display
     if(!web3) return (
       <div>
         You need to install the MetaMask extension.
       </div>
     );
 
-    //main page outlook
     return (
       <div>
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" /> //css file at "https://react.semantic-ui.com/usage"
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
         <Segment raised='true'>
           <div style={{ backgroundColor : 'lightblue'}}>
             <Container>
-              <div className="jumbotron"> //Basic bootstrap
-                <Segment inverted color='violet' textAlign='center'><h2>Voting Products </h2></Segment>//Title of home page
-                <Segment inverted>The owner of this contract is : <b>{this.state.owner} </b> </Segment> //owner address
+              <div className="jumbotron">
+                <Segment inverted color='violet' textAlign='center'><h2>Voting Products </h2></Segment>
+                <Segment inverted>The owner of this contract is : <b>{this.state.owner} </b> </Segment>
               </div>
             </Container>
             <Divider section/>
             <Container>
-              //Frontend to add product
               <Form onSubmit={this.addProduct} error={!!this.state.errorMessage}>
                 <Form.Field>
                   <Input focus placeholder="Type product name..." value={this.state.newProductName} onChange={event => {this.setState({newProductName: event.target.value})}} />
@@ -70,7 +67,7 @@ class ProductIndex extends Component{
               <h3>{this.state.status}</h3>
             </Container>
             <Divider section/>
-            <Link route='/products/show'> // To go to products page
+            <Link route='/products/show'>
               <Button primary><Icon name="tv"/> Show Products </Button>
             </Link>
           </div>
