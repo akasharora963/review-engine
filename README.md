@@ -1,5 +1,10 @@
 # Blockchain-Review-Engine
-This is an application where a product is reviewed  using *Blockchain technology* , which ensures the quality of the product and generates the trust among users by eliminiating the possibility of any biasedness towards a particular product.
+*Blockchain usage in product / people review engine is not explored to a greater extent.* Although there is a prevalence of the digital platforms, the perception of Trust & Data Privacy is limited for them. This could be an area where Blockchain can be used to establish Digital Trust. Blockchain which started to build trust for multiple unknown parties in crypto-currency space can be used to build trust in other business scenarios as well. 
+
+There are apprehensions for the feedback shared on the platforms like Amazon, Times of India, Zomato, Twitter etc. given people also use these platforms to give fake & doctored reviews. People buy products even with false ratings given on these platforms leading to bad experience. On the other hand, even genuine products get bad ratings with wrong feedback posted by their competitors. 
+
+This application explores Blockchain usage in Review Engine using Ethereum Rinkeby network. 
+
 ***
 #### Restrictions:
   - Only the owner can add products
