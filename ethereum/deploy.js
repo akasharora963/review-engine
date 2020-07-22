@@ -5,8 +5,8 @@ const Web3 = require('web3');
 const {interface, bytecode} = require('./compile'); //fetch contract attributes
 
 const provider = new HDwalletProvider(
-  '',//Add  Mnemonic phrase of Host account
-  ''//Add your infra link
+  '',//Add  Mnemonic phrase of metamask wallet
+  ''//Add your rinkeby infura link
 );
 
 const web3 = new Web3(provider);

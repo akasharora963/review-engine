@@ -68,21 +68,21 @@ class ProductShow extends Component{
         <Segment raised ='true'>
           <div style={{ backgroundColor : 'lightblue'}}>
             <Link route ='/'>
-              <Button inverted color='facebook'><Icon name="home"/>Go to Homes page</Button> //to go home page
+              <Button inverted color='facebook'><Icon name="home"/>Go to Homes page</Button>
             </Link>
             <h3> Products Info : </h3>
             <h5>Total Product Count  : {this.state.productCount}</h5>
             <h5>Total Voters : {this.state.votersCount}</h5>
             <Link route='/products/voter-details'>
-              <Button color='pink'><Icon name="eye"/> Voter Details </Button> //to go to voter details page
+              <Button color='pink'><Icon name="eye"/> Voter Details </Button>
             </Link>
             <ul className="list-group">
-              {this.state.products.length ? null : <h2><li>No Product Added</li></h2>} //when no product is added
-              {this.state.products.map(p =>  //product array is mapped to get product details
+              {this.state.products.length ? null : <h2><li>No Product Added</li></h2>}
+              {this.state.products.map(p =>
                   <li className="list-group-item" key={p.id}>
                     <Divider section/>
                     <Button primary value={p.id} onClick={this.addReview}><Icon name="arrow alternate circle up outline"/>Vote this product </Button>
-                    <Statistic horizontal label='Counts' value={p.reviewsCount} size="large" floated='right'/> //to show votersCount
+                    <Statistic horizontal label='Counts' value={p.reviewsCount} size="large" floated='right'/>
                     <Segment inverted compact='true'>{p.title}</Segment>
                   </li>
               )}
