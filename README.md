@@ -6,9 +6,9 @@ There are apprehensions for the feedback shared on the platforms like Amazon, Ti
 This application explores Blockchain usage in Review Engine using Ethereum Rinkeby network. 
 
 ***
-#### Restrictions:
-  - Only the owner can add products
-  - A user can only rate a product once
+#### Application Rules:
+  - Application admin add products
+  - Application user can rate a product only once (To extend in future to give flexibility to update the rating, however rating history will be stored in Blockchain)
 *** 
 ### Enviornment Set Up
 
