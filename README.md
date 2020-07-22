@@ -20,6 +20,9 @@ https://sway.office.com/moFQS2ef6Fjndk1V
 #### Set up MetaMask
 Download it from https://metamask.io/ and make its extention to browser  (reference https://medium.com/@followcoin/how-to-install-metamask-88cbdabc1d28)
 ***
+#### Set up ethereum node with help of Infura
+Go to "https://infura.io/" and get started (reference https://blog.infura.io/getting-started-with-infura-28e41844cc89)
+***
 #### Getting started
 
 - Install Node.js from https://nodejs.org/en/
@@ -86,6 +89,9 @@ To compile, Go to Ethereum directory and use command :
 $ node compile.js
 ```
 ### How to Deploy the contract?
+Add your Metamask Mnemonics and your rinkeby infura link in the file.
+#### Preview 
+![image](https://user-images.githubusercontent.com/68531338/88138363-270b9b00-cc0b-11ea-8460-e423d2aeb640.png)
 To deploy , Go to Ethereum directory and use command :
 ```sh
 $ node deploy.js
