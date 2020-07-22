@@ -89,9 +89,28 @@ To compile, Go to Ethereum directory and use command :
 $ node compile.js
 ```
 ### How to Deploy the contract?
-Add your Metamask Mnemonics and your rinkeby infura link in the file.
+Add your Metamask Mnemonics and your rinkeby infura link in the file.<br/> <br/>
+#### For metamask mnemonics:<br/> <br/>
+Open metamask and go to settings:<br/> <br/>
+![image](https://user-images.githubusercontent.com/68531338/88142886-e6644f80-cc13-11ea-8b35-39b9d8f9bb8b.png) <br/> <br/>
+Go to security and privacy :<br/> <br/>
+![image](https://user-images.githubusercontent.com/68531338/88142512-41e20d80-cc13-11ea-950d-52ca314d8157.png)<br/> <br/>
+Go on reveal seeds and type your password to get your mnemonic phrase <br/> <br/>
+![image](https://user-images.githubusercontent.com/68531338/88142558-5cb48200-cc13-11ea-9975-277b7683f06f.png)<br/> <br/>
+![image](https://user-images.githubusercontent.com/68531338/88143026-27f4fa80-cc14-11ea-919e-789177ac6515.png) <br/> <br/>
+
+#### For Infura link :
+Login to your infura account : <br/> <br/>
+![image](https://user-images.githubusercontent.com/68531338/88143703-545d4680-cc15-11ea-9782-71c5d8473473.png) <br/><br/>
+Go to ethereum and your created project: <br/><br/>
+![image](https://user-images.githubusercontent.com/68531338/88144049-ee24f380-cc15-11ea-8216-3efddf913053.png) <br/> <br/>
+Open settings : <br/> <br/>
+![image](https://user-images.githubusercontent.com/68531338/88145137-9c7d6880-cc17-11ea-9978-d3c3614a431e.png) <br/>
+
+
 #### Preview 
-![image](https://user-images.githubusercontent.com/68531338/88138363-270b9b00-cc0b-11ea-8460-e423d2aeb640.png)
+![image](https://user-images.githubusercontent.com/68531338/88141720-c7fd5480-cc11-11ea-9ce0-4cb243ec4287.png)
+
 To deploy , Go to Ethereum directory and use command :
 ```sh
 $ node deploy.js
