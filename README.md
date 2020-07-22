@@ -1,14 +1,27 @@
 # Blockchain-Review-Engine
-This is an application where a product is reviewed  using *Blockchain technology* , which ensures the quality of the product and generates the trust among users by eliminiating the possibility of any biasedness towards a particular product.
+Blockchain usage in product / people review engine is not explored to a greater extent. Although there is a prevalence of the digital platforms, the perception of Trust & Data Privacy is limited for them. This could be an area where Blockchain can be used to establish Digital Trust. Blockchain which started to build trust for multiple unknown parties in crypto-currency space can be used to build trust in other business scenarios as well. 
+
+There are apprehensions for the feedback shared on the platforms like Amazon, Times of India, Zomato, Twitter etc. given people also use these platforms to give fake & doctored reviews. People buy products even with false ratings given on these platforms leading to bad experience. On the other hand, even genuine products get bad ratings with wrong feedback posted by their competitors. 
+
+This application explores Blockchain usage in Review Engine using Ethereum Rinkeby network. 
+
 ***
-#### Restrictions:
-  - Only the owner can add products
-  - A user can only rate a product once
+#### Understanding Blockchain Basics:
+
+https://sway.office.com/moFQS2ef6Fjndk1V
+
+***
+#### Application Rules:
+  - Application admin can add products
+  - Application user can rate a product only once (To extend in future to give flexibility to update the rating, however rating history will be stored in Blockchain)
 *** 
 ### Enviornment Set Up
 
 #### Set up MetaMask
 Download it from https://metamask.io/ and make its extention to browser  (reference https://medium.com/@followcoin/how-to-install-metamask-88cbdabc1d28)
+***
+#### Set up ethereum node with help of Infura
+Go to "https://infura.io/" and get started (reference https://blog.infura.io/getting-started-with-infura-28e41844cc89)
 ***
 #### Getting started
 
@@ -76,6 +89,9 @@ To compile, Go to Ethereum directory and use command :
 $ node compile.js
 ```
 ### How to Deploy the contract?
+Add your Metamask Mnemonics and your rinkeby infura link in the file.
+#### Preview 
+![image](https://user-images.githubusercontent.com/68531338/88138363-270b9b00-cc0b-11ea-8460-e423d2aeb640.png)
 To deploy , Go to Ethereum directory and use command :
 ```sh
 $ node deploy.js
