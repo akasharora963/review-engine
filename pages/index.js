@@ -28,7 +28,7 @@ class ProductIndex extends Component{
    this.setState({status: 'Adding product...'});
    try{
      await rating.methods.addProduct(this.state.newProductName).send({from: this.state.accounts[0]});
-     this.setState({status: 'Product added!'});
+     this.setState({status: 'Ratings added!'});
    }catch(err){
      this.setState({errorMessage : err.message});
      this.setState({status: 'Try again!'});
@@ -51,7 +51,7 @@ class ProductIndex extends Component{
           <div style={{ backgroundColor : 'lightblue'}}>
             <Container>
               <div className="jumbotron">
-                <Segment inverted color='violet' textAlign='center'><h2>Voting Products </h2></Segment>
+                <Segment inverted color='violet' textAlign='center'><h2>COVID-19 VACCINE REVIEWS </h2></Segment>
                 <Segment inverted>The owner of this contract is : <b>{this.state.owner} </b> </Segment>
               </div>
             </Container>
@@ -59,16 +59,16 @@ class ProductIndex extends Component{
             <Container>
               <Form onSubmit={this.addProduct} error={!!this.state.errorMessage}>
                 <Form.Field>
-                  <Input focus placeholder="Type product name..." value={this.state.newProductName} onChange={event => {this.setState({newProductName: event.target.value})}} />
+                  <Input focus placeholder="Type ratings..." value={this.state.newProductName} onChange={event => {this.setState({newProductName: event.target.value})}} />
                 </Form.Field>
-                <Button inverted color='facebook' loading = {this.state.loading}><Icon name="add circle"/>Add new product</Button>
+                <Button inverted color='facebook' loading = {this.state.loading}><Icon name="add circle"/>Add new ratings</Button>
                 <Message error header= "Oops!!" content = {this.state.errorMessage}/>
               </Form>
               <h3>{this.state.status}</h3>
             </Container>
             <Divider section/>
             <Link route='/products/show'>
-              <Button primary><Icon name="tv"/> Show Products </Button>
+              <Button primary><Icon name="tv"/> Show Ratings </Button>
             </Link>
           </div>
         </Segment>

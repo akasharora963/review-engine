@@ -50,10 +50,10 @@ class VoterDetails extends Component{
         <Segment raised ='true'>
           <div style={{ backgroundColor : 'lightblue'}}>
             <Link route ='/'>
-              <Button inverted color='facebook' ><Icon name="home"/>Go to Homes page</Button>
+              <Button inverted color='facebook' ><Icon name="home"/>Go to Home page</Button>
             </Link>
             <Link route ='/products/show'>
-              <Button inverted color='google plus'><Icon name="fighter jet"/>Go to Products page</Button>
+              <Button inverted color='google plus'><Icon name="fighter jet"/>Go to Product page</Button>
             </Link>
             <h3> Voters Info : </h3>
             <ul className="list-group">
@@ -62,7 +62,7 @@ class VoterDetails extends Component{
                   <div>
                     {p.pvoters.length ?
                     <li className="list-group-item" key={p.id}>
-                      <Header size='medium'>Product  : {p.title}</Header>
+                      <Header size='medium'>Rating  : {p.title}</Header>
                       <Segment inverted compact='true'>
                         {p.pvoters.map(arr=>(
                           <p>{arr}</p>

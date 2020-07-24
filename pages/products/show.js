@@ -68,11 +68,11 @@ class ProductShow extends Component{
         <Segment raised ='true'>
           <div style={{ backgroundColor : 'lightblue'}}>
             <Link route ='/'>
-              <Button inverted color='facebook'><Icon name="home"/>Go to Homes page</Button>
+              <Button inverted color='facebook'><Icon name="home"/>Go to Home page</Button>
             </Link>
-            <h3> Products Info : </h3>
-            <h5>Total Product Count  : {this.state.productCount}</h5>
-            <h5>Total Voters : {this.state.votersCount}</h5>
+            <h3> Ratings Info : </h3>
+            <h5>Total Rating Count  : {this.state.productCount}</h5>
+            <h5>Total Ratings : {this.state.votersCount}</h5>
             <Link route='/products/voter-details'>
               <Button color='pink'><Icon name="eye"/> Voter Details </Button>
             </Link>
@@ -81,7 +81,7 @@ class ProductShow extends Component{
               {this.state.products.map(p =>
                   <li className="list-group-item" key={p.id}>
                     <Divider section/>
-                    <Button primary value={p.id} onClick={this.addReview}><Icon name="arrow alternate circle up outline"/>Vote this product </Button>
+                    <Button primary value={p.id} onClick={this.addReview}><Icon name="arrow alternate circle up outline"/>Rating details </Button>
                     <Statistic horizontal label='Counts' value={p.reviewsCount} size="large" floated='right'/>
                     <Segment inverted compact='true'>{p.title}</Segment>
                   </li>
