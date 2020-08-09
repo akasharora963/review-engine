@@ -1,25 +1,24 @@
-import React,{Component} from 'react'
+import React,{Component} from 'react';
 import rating from '../../ethereum/instance';
-import {Form,Input,Segment,Button,Container,Statistic,Divider,Message,Header,Icon} from 'semantic-ui-react';
+import {Form,Input,Segment,Button,Container,Divider,Message,Icon,Header} from 'semantic-ui-react'; //impotant functionality of semantic ui is used
 import {Link} from '../../routes';
 import web3 from '../../ethereum/web3';
 
-class ProductShow extends Component{
+class ProductDetails extends Component{
   state = {
-    productCount : 0,
-    votersCount : 0,
-    products : [], // Auxillary array to store product details
+    products : [],
     accounts : '',
-    pageSize : 5, // default parameter to load page and create products array
+    productCount : 0,
+    pageSize : 5 //default parameter to load page
   }
- //things to be load first
+
   async componentDidMount(){
     if(!web3) return;
     this.setState({accounts: await web3.eth.getAccounts()});
-    this.setState({votersCount : await rating.methods.totalVoters().call()});
+    this.setState({productCount : await rating.methods.productCount().call()});
     this.getPage(0);
   }
- //Auxillary function to load page and create products array
+
   async getPage(page) {
     if(page < 0) return;
 
@@ -45,54 +44,45 @@ class ProductShow extends Component{
    console.log('products', this.state.products); //to know product array status
  }
 
-//function to add  REVIEW:
-  addReview = async (event) => {
-      event.preventDefault();
+ render(){
+   return (
+     <div>
+       <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+       <Segment raised ='true'>
+         <div style={{ backgroundColor : 'lightblue'}}>
+           <Link route ='/products/'>
+             <Button inverted color='facebook' ><Icon name="home"/>Go to Homes page</Button>
+           </Link>
+           <h3> Total Products :  {this.state.productCount} </h3>
+           <h3> Products Info : </h3>
+           <ul className="list-group">
+             {this.state.products.length ? null : <h2>No info available</h2>}
+             {this.state.products.map(p =>
+                 <div>
 
-      let productId = event.target.value;
-      window.alert("Adding Review, Please wait..");  // to alert  user
-      try{
-        let x = await rating.methods.addReview(productId).send({from: this.state.accounts[0]});
-        this.setState({votersCount : await rating.methods.totalVoters().call()});
-        console.log("oq voltou", x);; //ethereum block status details
-        window.alert("Review Added, Refresh to see changes");
-      }catch(err){
-        window.alert("Error Occured !!");
-      }
-   }
-// frontend for show product page
-  render(){
-    return (
-      <div>
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-        <Segment raised ='true'>
-          <div style={{ backgroundColor : 'lightblue'}}>
-            <Link route ='/'>
-              <Button inverted color='facebook'><Icon name="home"/>Go to Home page</Button>
-            </Link>
-            <h3> Ratings Info : </h3>
-            <h5>Total Rating Count  : {this.state.productCount}</h5>
-            <h5>Total Ratings : {this.state.votersCount}</h5>
-            <Link route='/products/voter-details'>
-              <Button color='pink'><Icon name="eye"/> Voter Details </Button>
-            </Link>
-            <ul className="list-group">
-              {this.state.products.length ? null : <h2><li>No Product Added</li></h2>}
-              {this.state.products.map(p =>
-                  <li className="list-group-item" key={p.id}>
-                    <Divider section/>
-                    <Button primary value={p.id} onClick={this.addReview}><Icon name="arrow alternate circle up outline"/>Rating details </Button>
-                    <Statistic horizontal label='Counts' value={p.reviewsCount} size="large" floated='right'/>
-                    <Segment inverted compact='true'>{p.title}</Segment>
-                  </li>
-              )}
-            </ul>
+                   <li className="list-group-item" key={p.id}>
+                     <Header size='medium'> {p.title}</Header>
+                     <ul>
+                      <li> Reviews Count : {p.reviewsCount} </li>
+                      <li> Avg Rating : {(p.avgRating/10).toFixed(1)}</li>
+                     </ul>
+                     {p.pvoters.length ?
+                     <Segment inverted compact='true'>
+                       {p.pvoters.map(arr=>(
+                         <p>{arr}</p>
+                       ))}
+                     </Segment> : null}
+                     <Divider section/>
+                   </li>
+                 </div>
+             )}
+           </ul>
 
-          </div>
-        </Segment>
-      </div>
-    );
-  }
+         </div>
+       </Segment>
+     </div>
+   );
+ }
 }
 
-export default ProductShow;
+export default ProductDetails;

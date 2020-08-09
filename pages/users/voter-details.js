@@ -9,6 +9,7 @@ class VoterDetails extends Component{
   state = {
     products : [],
     accounts : '',
+    productCount : 0,
     pageSize : 5 //default parameter to load page
   }
 
@@ -50,10 +51,10 @@ class VoterDetails extends Component{
         <Segment raised ='true'>
           <div style={{ backgroundColor : 'lightblue'}}>
             <Link route ='/'>
-              <Button inverted color='facebook' ><Icon name="home"/>Go to Home page</Button>
+              <Button inverted color='facebook' ><Icon name="home"/>Go to Homes page</Button>
             </Link>
             <Link route ='/products/show'>
-              <Button inverted color='google plus'><Icon name="fighter jet"/>Go to Product page</Button>
+              <Button inverted color='google plus'><Icon name="fighter jet"/>Go to Products page</Button>
             </Link>
             <h3> Voters Info : </h3>
             <ul className="list-group">
@@ -62,7 +63,7 @@ class VoterDetails extends Component{
                   <div>
                     {p.pvoters.length ?
                     <li className="list-group-item" key={p.id}>
-                      <Header size='medium'>Rating  : {p.title}</Header>
+                      <Header size='medium'>Product  : {p.title}</Header>
                       <Segment inverted compact='true'>
                         {p.pvoters.map(arr=>(
                           <p>{arr}</p>
