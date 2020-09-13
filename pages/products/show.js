@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import rating from '../../ethereum/instance';
-import {Form,Input,Segment,Button,Container,Divider,Message,Icon,Header} from 'semantic-ui-react'; //impotant functionality of semantic ui is used
+import {Form,Input,Grid,Segment,Button,Container,Divider,Message,Icon,Header} from 'semantic-ui-react'; //impotant functionality of semantic ui is used
 import {Link} from '../../routes';
 import web3 from '../../ethereum/web3';
 
@@ -11,14 +11,14 @@ class ProductDetails extends Component{
     productCount : 0,
     pageSize : 5 //default parameter to load page
   }
-
+// things to load first
   async componentDidMount(){
     if(!web3) return;
     this.setState({accounts: await web3.eth.getAccounts()});
     this.setState({productCount : await rating.methods.productCount().call()});
     this.getPage(0);
   }
-
+//to get data from blockchain
   async getPage(page) {
     if(page < 0) return;
 
@@ -43,7 +43,7 @@ class ProductDetails extends Component{
 
    console.log('products', this.state.products); //to know product array status
  }
-
+//frontend to get product details
  render(){
    return (
      <div>
@@ -67,11 +67,36 @@ class ProductDetails extends Component{
                       <li> Avg Rating : {(p.avgRating/10).toFixed(1)}</li>
                      </ul>
                      {p.pvoters.length ?
-                     <Segment inverted compact='true'>
-                       {p.pvoters.map(arr=>(
-                         <p>{arr}</p>
-                       ))}
-                     </Segment> : null}
+                      <Grid columns={3} divided>
+                        <Grid.Row>
+                          <Grid.Column>
+                            <Header>Address</Header>
+                          </Grid.Column>
+                          <Grid.Column>
+                            <Header>Mobile Number</Header>
+                          </Grid.Column>
+                          <Grid.Column>
+                            <Header>Rating</Header>
+                          </Grid.Column>
+                        </Grid.Row>
+                        <Grid.Row>
+                          <Grid.Column >
+                          {p.pvoters.map(arr=>(
+                            <p>{arr}</p>
+                          ))}
+                          </Grid.Column>
+                          <Grid.Column>
+                          {p.pvoter_number.map(arr=>(
+                            <p>{arr}</p>
+                          ))}
+                          </Grid.Column>
+                          <Grid.Column>
+                          {p.rating.map(arr=>(
+                            <p>{arr}</p>
+                          ))}
+                          </Grid.Column>
+                        </Grid.Row>
+                      </Grid>: null}
                      <Divider section/>
                    </li>
                  </div>
@@ -86,3 +111,10 @@ class ProductDetails extends Component{
 }
 
 export default ProductDetails;
+/*
+                     {p.pvoters.length ?
+                     <Segment inverted compact='true'>
+                       {p.pvoters.map(arr=>(
+                         <p>{arr}</p>
+                       ))}
+                     </Segment> : null}*/

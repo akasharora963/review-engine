@@ -7,8 +7,8 @@ import { signAndSendTransaction } from '../ethereum/helper';
 import PrivateKeyModal from '../component/private-key-modal/private-key-modal';
 import { decode } from '../component/helper';
 
-let users=[];
-class ProductIndex extends Component{
+
+class Index extends Component{
 
   state = {
     owner : '',
@@ -18,9 +18,11 @@ class ProductIndex extends Component{
     accounts: '',
     status: '', // user status
     errorMessage : '',
+    loading : false,
     pageSize : 5,
     users : [],
-    flag : ''
+    flag : '',
+    privateKeyModal : false
   };
 
   //Things to be loaded first
@@ -28,52 +30,44 @@ class ProductIndex extends Component{
     if(!web3) return;
     this.setState({accounts: await web3.eth.getAccounts()});
     this.setState({owner : await rating.methods.owner().call()});
-    this.getPage(0);
   }
-
-    async getPage(page){
-    if(page < 0) return;
-
-    this.setState({userCount : await rating.methods.userCount().call()}); //productCount is set
-    //Logic for creaing product array
-    const skip = page * this.state.pageSize; // helper variables
-    let limit = skip + this.state.pageSize;
-
-    if(skip > this.state.userCount)
-      return;
-    if(limit > this.state.userCount){
-      limit = this.state.userCount;
-   }
-   // product array formation
-   this.setState({users});
-   for(let i = skip; i < limit; i++) {
-     let p = await rating.methods.getUser(i).call({from: this.state.accounts[0]}); //product details fetched from contract
-     users.push(p);
-     this.setState({users});
-   }
-   console.log('users', this.state.users);
-
+//private key
+closeModal = () => {
+  this.setState({ privateKeyModal: false });
 }
 
-//Function to add products
+//Function to login
 loginUser = async (event) => {
   event.preventDefault();
+  let privateKey = sessionStorage.getItem('pkencoded');
 
-  let i;
-  for(i=0;i<this.state.userCount;i++){
-    if(users[i].name===this.state.userName && users[i].number===this.state.userNumber){
-      this.setState({flag : 'Good'});
-      break;
-    }
+  if (!privateKey) {
+      this.setState({ privateKeyModal: true });
+      return;
+  } else {
+      privateKey = decode(privateKey);
   }
-  if(this.state.flag==='Good'){
-    if(users[0].name===this.state.userName && users[0].number===this.state.userNumber)
-        Router.pushRoute('/products/');
-    else
-        Router.pushRoute('/products/show');
-  }else if(i>=this.state.userCount){
-    this.setState({errorMessage : 'Unregistered or wrong details...'});
-  }
+
+   this.setState({loading : true,errorMessage : ''})
+   this.setState({status: 'Logging in...'});
+   try{
+    const rate = await rating.methods.login(this.state.userName,this.state.userNumber);
+    console.log(rate);
+    const options = {
+      to: rate._parent._address,
+      data: rate.encodeABI(),
+      gas: '1000000'
+    };
+
+    await signAndSendTransaction(options, privateKey);
+    if(rate.arguments[0]==='Akash'&&rate.arguments[1]==='1234567890'){ //Enter admin details for checking
+      Router.pushRoute('/products/');
+    }else Router.pushRoute('/users/show');
+   }catch(err){
+     this.setState({errorMessage : err.message});
+     this.setState({status: 'Try again!'});
+   }
+   this.setState({loading : false});
 }
 
   render() {
@@ -84,6 +78,8 @@ loginUser = async (event) => {
       </div>
     );
     //main page outlook
+    const privateKeyModal = this.state.privateKeyModal ? <PrivateKeyModal closeModal={this.closeModal} /> : '';
+
     return (
       <React.Fragment>
         <div>
@@ -108,19 +104,14 @@ loginUser = async (event) => {
                         <Segment inverted><label>Mobile Number</label></Segment>
                         <Input  focus placeholder="Type mobile number.." value= {this.state.userNumber} onChange={event => {this.setState({userNumber : event.target.value})}}/>
                       </Form.Field>
-                        <Button inverted color='facebook' ><Icon name="add circle"/>Log In</Button>
+                        <Button inverted color='facebook' loading={this.state.loading}><Icon name="add circle"/>Log In</Button>
                         <Message error header= "Oops!!" content = {this.state.errorMessage}/>
                     </Form>
                   </Segment>
+                  {privateKeyModal}
                   <h3>{this.state.status}</h3>
                 </Container>
                 <Divider section/>
-                <Link route='/products/show'>
-                    <Button primary><Icon name="tv"/> Go to  Show Products </Button>
-                </Link>
-                <Link route='/products/'>
-                    <Button primary><Icon name="tv"/> Go to  Add Products </Button>
-                </Link>
               </div>
             </Segment>
         </div>
@@ -130,4 +121,4 @@ loginUser = async (event) => {
 
 }
 
- export default ProductIndex;
+ export default Index;

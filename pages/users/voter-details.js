@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import rating from '../../ethereum/instance';
-import {Form,Input,Segment,Button,Container,Statistic,Divider,Message,Header,Icon} from 'semantic-ui-react';
+import {Form,Input,Grid,Segment,Button,Container,Statistic,Divider,Message,Header,Icon} from 'semantic-ui-react';
 import {Link} from '../../routes';
 import web3 from '../../ethereum/web3';
 
@@ -50,27 +50,51 @@ class VoterDetails extends Component{
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
         <Segment raised ='true'>
           <div style={{ backgroundColor : 'lightblue'}}>
-            <Link route ='/'>
-              <Button inverted color='facebook' ><Icon name="home"/>Go to Homes page</Button>
-            </Link>
-            <Link route ='/products/show'>
-              <Button inverted color='google plus'><Icon name="fighter jet"/>Go to Products page</Button>
+            <Link route ='/users/show'>
+              <Button inverted color='facebook' ><Icon name="home"/>Go to Home page</Button>
             </Link>
             <h3> Voters Info : </h3>
             <ul className="list-group">
               {this.state.products.length ? null : <h2>No info available</h2>}
               {this.state.products.map(p =>
                   <div>
-                    {p.pvoters.length ?
+                    
                     <li className="list-group-item" key={p.id}>
-                      <Header size='medium'>Product  : {p.title}</Header>
-                      <Segment inverted compact='true'>
-                        {p.pvoters.map(arr=>(
-                          <p>{arr}</p>
-                        ))}
-                      </Segment>
+                      <Header size='medium'>Product  : {p.title} </Header>
+                      {p.pvoters.length ?
+                      <Grid columns={3} divided>
+                        <Grid.Row>
+                          <Grid.Column>
+                            <Header>Address</Header>
+                          </Grid.Column>
+                          <Grid.Column>
+                            <Header>Mobile Number</Header>
+                          </Grid.Column>
+                          <Grid.Column>
+                            <Header>Rating</Header>
+                          </Grid.Column>
+                        </Grid.Row>
+                        <Grid.Row>
+                          <Grid.Column>
+                          {p.pvoters.map(arr=>(
+                            <p>{arr}</p>
+                          ))}
+                          </Grid.Column>
+                          <Grid.Column>
+                          {p.pvoter_number.map(arr=>(
+                            <p>{arr}</p>
+                          ))}
+                          </Grid.Column>
+                          <Grid.Column>
+                          {p.rating.map(arr=>(
+                            <p>{arr}</p>
+                          ))}
+                          </Grid.Column>
+                        </Grid.Row>
+                      </Grid>: null}
+                     
                       <Divider section/>
-                    </li> : null}
+                    </li> 
                   </div>
               )}
             </ul>

@@ -15,10 +15,10 @@ class UserDetails extends Component{
   async componentDidMount(){
     if(!web3) return;
     this.setState({accounts: await web3.eth.getAccounts()});
-    this.setState({userCount : await rating.methods.productCount().call()});
+    this.setState({userCount : await rating.methods.userCount().call()});
     this.getPage(0);
   }
-
+//to get details from blockchain
   async getPage(page){
     if(page < 0) return;
 
@@ -36,13 +36,13 @@ class UserDetails extends Component{
    let users=[];
    this.setState({users});
    for(let i = skip; i < limit; i++) {
-     let p = await rating.methods.getUser(i).call({from: this.state.accounts[0]}); //product details fetched from contract
+     let p = await rating.methods.getAllusers(i).call({from: this.state.accounts[0]}); //product details fetched from contract
      users.push(p);
      this.setState({users});
    }
    console.log('users', this.state.users);
  }
-
+//frontend
  render(){
    return (
      <div>
@@ -62,7 +62,7 @@ class UserDetails extends Component{
                    <li className="list-group-item" key={u.id}>
                      <Header size='medium'> {u.name}</Header>
                      <ul>
-                      <li> Mobil Number : {u.number} </li>
+                      <li> Mobile Number : {u.number} </li>
                      </ul>
                      <Divider section/>
                    </li>

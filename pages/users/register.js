@@ -30,7 +30,7 @@ class RegisterIndex extends Component{
    this.setState({ privateKeyModal: false });
  }
 
-//Function to add products
+//Function to register
  addUser = async (event) => {
    event.preventDefault();
 
@@ -56,7 +56,6 @@ class RegisterIndex extends Component{
 
       await signAndSendTransaction(options, privateKey);
      this.setState({status: 'User added!'});
-     Router.pushRoute('/products/show');
    }catch(err){
      this.setState({errorMessage : err.message});
      this.setState({status: 'Try again!'});
@@ -85,6 +84,9 @@ class RegisterIndex extends Component{
                     <Segment inverted color='violet' textAlign='center'><h2>Blockchain Review Engine </h2></Segment>
                   </div>
                 </Container>
+                <Link route='/'>
+                    <Button color='green' raised> Go Back </Button>
+                </Link>
                 <Divider section/>
                 <Container>
                 <p> Total users : {this.state.userCount} </p>
