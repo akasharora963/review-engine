@@ -5,8 +5,8 @@ const Web3 = require('web3');
 const {interface, bytecode} = require('./compile'); //fetch contract attributes
 
 const provider = new HDwalletProvider(
-  'thank purse shallow flash young sting decline math unveil story rubber coach',//Add  Mnemonic phrase of Host account
-  'https://rinkeby.infura.io/v3/40fe8bbd00db49f980863386af612f14'//Add your infra link
+  '',//Add  Mnemonic phrase of Host account
+  ''//Add your infra link
 );
 
 const web3 = new Web3(provider);
