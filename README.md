@@ -140,10 +140,10 @@ $ npm run dev
 ### How to use the Application?
 At the start
 ### Home page
-![image](https://user-images.githubusercontent.com/45670997/87299133-12ebdd80-c529-11ea-8577-742553f79184.png)
+![image](https://user-images.githubusercontent.com/68531338/95194002-55ece280-07f2-11eb-8035-215f29742c00.png)
 
-### Products Page
-![image](https://user-images.githubusercontent.com/45670997/87301132-a7a40a80-c52c-11ea-9a5e-d73e199e73ff.png)
+### Registration Page
+![image](https://user-images.githubusercontent.com/68531338/95194199-a06e5f00-07f2-11eb-9b35-f83fc1293588.png)
 
 ###  Voter Details Page
 ![image](https://user-images.githubusercontent.com/45670997/87301187-bd193480-c52c-11ea-9b18-d4c6d3814e7e.png)
