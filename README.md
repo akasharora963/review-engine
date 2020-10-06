@@ -145,11 +145,12 @@ At the start
 ### Registration Page
 ![image](https://user-images.githubusercontent.com/68531338/95194199-a06e5f00-07f2-11eb-9b35-f83fc1293588.png)
 
-###  Voter Details Page
-![image](https://user-images.githubusercontent.com/45670997/87301187-bd193480-c52c-11ea-9b18-d4c6d3814e7e.png)
+### Login 
+![image](https://user-images.githubusercontent.com/68531338/95195133-c1837f80-07f3-11eb-9e93-2abf164a441e.png)
+![image](https://user-images.githubusercontent.com/68531338/95195309-fb548600-07f3-11eb-98c0-9e96b6e60577.png)
 ***
-#### Adding product
-![image](https://user-images.githubusercontent.com/45670997/87301983-28173b00-c52e-11ea-8314-f60f5b998939.png)
+#### Admin Home Page
+![image](https://user-images.githubusercontent.com/68531338/95195489-3bb40400-07f4-11eb-9e9a-1ac27479dbbc.png)
 
 #### Products Page Status
 ![image](https://user-images.githubusercontent.com/45670997/87302222-9e1ba200-c52e-11ea-94e2-2b301643e583.png)
