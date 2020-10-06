@@ -60,20 +60,30 @@ After installing packages : <br/>Open package.json <br/> In script tag, add 'tes
 #### File Details
 - .next <br/>
 Next.js *A React framework* is used to ensure an intuitive page-based routing system (with support for dynamic routes). <br/> <br/>
+- component <br/>
+helper : for encoding and decoding <br/>
+private key modal : It contains the private key implementation <br/>
 - ethereum : It contains ethereum related files <br/>
 contracts : It contains the smart contract built in solidity. <br/>
+helper : It contains  a helper file for sign and send Transaction <br/>
 compile.js : It is used to compile the contract using solc.<br/>
 deploy.js : It deploys a contract.<br/>
 instance.js : It is used to create a instance of contract so that an interaction is done using frontend.<br/>
 web3.js : It is used to generate the web3 instance and to set a provider.<br/> <br/>
 - pages : It contains the frontend files<br/>
-index.js : It defines the Home Page <br/>
-show.js : It defnes the Products Page <br/>
+products <br/>
+index.js : It defines the Admin Home Page <br/>
+show.js :  It defines the product details page <br/>
+user-details.js : It defines the user information <br/>
+users <br/>
+register.js : It defines the registeration page <br/>
+show.js : It defines the user home page <br/>
 voter-details.js : It defines the Voters Details Page. <br/> <br/>
+index.js : It defines the home page(login page)<br/>
 - test (ratingTest.js) : It is used to write test cases realated to contract. <br/> <br/>
 - routes.js : It is used to set routes of the pages.<br/> <br/>
 - server.js : It is used to set the server. <br/> <br/>
-- package,json : It contains all the dependencies related to project. <br/> <br/>
+- package.json : It contains all the dependencies related to project. <br/> <br/>
 ***
 ### How to Test the environment?
 To run test :
@@ -130,27 +140,37 @@ $ npm run dev
 ### How to use the Application?
 At the start
 ### Home page
-![image](https://user-images.githubusercontent.com/45670997/87299133-12ebdd80-c529-11ea-8577-742553f79184.png)
+![image](https://user-images.githubusercontent.com/68531338/95194002-55ece280-07f2-11eb-8035-215f29742c00.png)
 
-### Products Page
-![image](https://user-images.githubusercontent.com/45670997/87301132-a7a40a80-c52c-11ea-9a5e-d73e199e73ff.png)
+### Registration Page
+![image](https://user-images.githubusercontent.com/68531338/95194199-a06e5f00-07f2-11eb-9b35-f83fc1293588.png)
 
-###  Voter Details Page
-![image](https://user-images.githubusercontent.com/45670997/87301187-bd193480-c52c-11ea-9b18-d4c6d3814e7e.png)
+### Login 
+![image](https://user-images.githubusercontent.com/68531338/95195133-c1837f80-07f3-11eb-9e93-2abf164a441e.png)
+![image](https://user-images.githubusercontent.com/68531338/95195309-fb548600-07f3-11eb-98c0-9e96b6e60577.png)
 ***
-#### Adding product
-![image](https://user-images.githubusercontent.com/45670997/87301983-28173b00-c52e-11ea-8314-f60f5b998939.png)
+#### Admin Home Page
+![image](https://user-images.githubusercontent.com/68531338/95195489-3bb40400-07f4-11eb-9e9a-1ac27479dbbc.png)
 
-#### Products Page Status
-![image](https://user-images.githubusercontent.com/45670997/87302222-9e1ba200-c52e-11ea-94e2-2b301643e583.png)
+### User Details
+![image](https://user-images.githubusercontent.com/68531338/95196112-32776700-07f5-11eb-8b51-e19d88f9e689.png)
 
-### Voting product
-![image](https://user-images.githubusercontent.com/45670997/87302375-e76bf180-c52e-11ea-8220-e8ded20f596b.png)
-![image](https://user-images.githubusercontent.com/45670997/87302546-32860480-c52f-11ea-9439-759c23fa7293.png)
-![image](https://user-images.githubusercontent.com/45670997/87302610-53e6f080-c52f-11ea-8ff1-31be7f93c58e.png)
-![image](https://user-images.githubusercontent.com/45670997/87302641-682aed80-c52f-11ea-92a0-660c8f3c06d4.png)
+### AddingProduct
+![image](https://user-images.githubusercontent.com/68531338/95196979-7c148180-07f6-11eb-9cca-7b11f4805700.png)
+
+### Product Details
+![image](https://user-images.githubusercontent.com/68531338/95196345-871ae200-07f5-11eb-9a75-97e3d287ab2b.png)
+
+### User Home Page
+![image](https://user-images.githubusercontent.com/68531338/95197510-550a7f80-07f7-11eb-839f-c6147021034e.png)
+
+### Rate the product
+![image](https://user-images.githubusercontent.com/68531338/95200577-3e1a5c00-07fc-11eb-81a6-bb0deb06e794.png)
+![image](https://user-images.githubusercontent.com/68531338/95200410-fb588400-07fb-11eb-8b62-db8ee090d328.png)
+count increases and avg rating changes<br/>
+![image](https://user-images.githubusercontent.com/68531338/95200801-981b2180-07fc-11eb-8aa1-115a0daa37bd.png)
 
 ### Voter Details
-![image](https://user-images.githubusercontent.com/45670997/87302718-8a247000-c52f-11ea-8aff-18737e12fb80.png)
+![image](https://user-images.githubusercontent.com/68531338/95200983-e6302500-07fc-11eb-88b4-da60266e8802.png)
 
 Thank you!!
