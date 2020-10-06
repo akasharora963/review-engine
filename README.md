@@ -164,8 +164,13 @@ At the start
 ### User Home Page
 ![image](https://user-images.githubusercontent.com/68531338/95197510-550a7f80-07f7-11eb-839f-c6147021034e.png)
 
-### Voter Details
-![image](https://user-images.githubusercontent.com/68531338/95197665-913de000-07f7-11eb-9aa6-1f96a597d355.png)
+### Rate the product
+![image](https://user-images.githubusercontent.com/68531338/95200577-3e1a5c00-07fc-11eb-81a6-bb0deb06e794.png)
+![image](https://user-images.githubusercontent.com/68531338/95200410-fb588400-07fb-11eb-8b62-db8ee090d328.png)
+count increases and avg rating changes<br/>
+![image](https://user-images.githubusercontent.com/68531338/95200801-981b2180-07fc-11eb-8aa1-115a0daa37bd.png)
 
+### Voter Details
+![image](https://user-images.githubusercontent.com/68531338/95200983-e6302500-07fc-11eb-88b4-da60266e8802.png)
 
 Thank you!!
