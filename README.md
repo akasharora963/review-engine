@@ -60,20 +60,30 @@ After installing packages : <br/>Open package.json <br/> In script tag, add 'tes
 #### File Details
 - .next <br/>
 Next.js *A React framework* is used to ensure an intuitive page-based routing system (with support for dynamic routes). <br/> <br/>
+- component <br/>
+helper : for encoding and decoding <br/>
+private key modal : It contains the private key implementation <br/>
 - ethereum : It contains ethereum related files <br/>
 contracts : It contains the smart contract built in solidity. <br/>
+helper : It contains  a helper file for sign and send Transaction <br/>
 compile.js : It is used to compile the contract using solc.<br/>
 deploy.js : It deploys a contract.<br/>
 instance.js : It is used to create a instance of contract so that an interaction is done using frontend.<br/>
 web3.js : It is used to generate the web3 instance and to set a provider.<br/> <br/>
 - pages : It contains the frontend files<br/>
-index.js : It defines the Home Page <br/>
-show.js : It defnes the Products Page <br/>
+products <br/>
+index.js : It defines the Admin Home Page <br/>
+show.js :  It defines the product details page <br/>
+user-details.js : It defines the user information <br/>
+users <br/>
+register.js : It defines the registeration page <br/>
+show.js : It defines the user home page <br/>
 voter-details.js : It defines the Voters Details Page. <br/> <br/>
+index.js : It defines the home page(login page)<br/>
 - test (ratingTest.js) : It is used to write test cases realated to contract. <br/> <br/>
 - routes.js : It is used to set routes of the pages.<br/> <br/>
 - server.js : It is used to set the server. <br/> <br/>
-- package,json : It contains all the dependencies related to project. <br/> <br/>
+- package.json : It contains all the dependencies related to project. <br/> <br/>
 ***
 ### How to Test the environment?
 To run test :
