@@ -152,16 +152,20 @@ At the start
 #### Admin Home Page
 ![image](https://user-images.githubusercontent.com/68531338/95195489-3bb40400-07f4-11eb-9e9a-1ac27479dbbc.png)
 
-#### Products Page Status
-![image](https://user-images.githubusercontent.com/45670997/87302222-9e1ba200-c52e-11ea-94e2-2b301643e583.png)
+### User Details
+![image](https://user-images.githubusercontent.com/68531338/95196112-32776700-07f5-11eb-8b51-e19d88f9e689.png)
 
-### Voting product
-![image](https://user-images.githubusercontent.com/45670997/87302375-e76bf180-c52e-11ea-8220-e8ded20f596b.png)
-![image](https://user-images.githubusercontent.com/45670997/87302546-32860480-c52f-11ea-9439-759c23fa7293.png)
-![image](https://user-images.githubusercontent.com/45670997/87302610-53e6f080-c52f-11ea-8ff1-31be7f93c58e.png)
-![image](https://user-images.githubusercontent.com/45670997/87302641-682aed80-c52f-11ea-92a0-660c8f3c06d4.png)
+### AddingProduct
+![image](https://user-images.githubusercontent.com/68531338/95196979-7c148180-07f6-11eb-9cca-7b11f4805700.png)
+
+### Product Details
+![image](https://user-images.githubusercontent.com/68531338/95196345-871ae200-07f5-11eb-9a75-97e3d287ab2b.png)
+
+### User Home Page
+![image](https://user-images.githubusercontent.com/68531338/95197510-550a7f80-07f7-11eb-839f-c6147021034e.png)
 
 ### Voter Details
-![image](https://user-images.githubusercontent.com/45670997/87302718-8a247000-c52f-11ea-8aff-18737e12fb80.png)
+![image](https://user-images.githubusercontent.com/68531338/95197665-913de000-07f7-11eb-9aa6-1f96a597d355.png)
+
 
 Thank you!!
