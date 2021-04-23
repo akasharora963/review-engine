@@ -10,7 +10,7 @@ const provider = new HDwalletProvider(
 );
 
 const web3 = new Web3(provider);
-const privateKey= 'deae0ccdccd1150f2e133390af27e822083fccf06efd98d4be935e154c150ff9';
+const privateKey= '';
 const deploy = async () =>{
 
   const accounts= await web3.eth.getAccounts();
