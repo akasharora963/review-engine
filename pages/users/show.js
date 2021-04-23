@@ -118,7 +118,7 @@ class UserShow extends Component{
               {this.state.products.map(p =>
                   <li className="list-group-item" key={p.id}>
                     <Divider section/>
-                    <Button primary value={p.id} onClick={this.addReview} loading={this.state.loading}><Icon name="arrow alternate circle up outline"/>Vote this product </Button>
+                    <Button primary value={p.id} onClick={this.addReview} loading={this.state.loading}><Icon name="arrow alternate circle up outline"/>Rate this product </Button>
                     <Statistic horizontal label='Counts' value={p.reviewsCount} size="large" floated='right'/>
                     <Segment inverted compact='true'>{p.title}</Segment>
                     <Segment inverted compact='true'>Avg Rating :{(p.avgRating/10).toFixed(1)}</Segment>

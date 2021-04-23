@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;//solidity version
+pragma solidity ^0.4.17;
 
 contract Rating  {
     //User attributes
